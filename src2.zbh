@@ -1,0 +1,20 @@
+var global_x;
+def jiecheng(){
+    var x=global_x;
+    var y=1;
+    var z;
+    if(global_x==1){
+        return y;
+    }else{
+        global_x=global_x-1;
+        z=jiecheng();
+        z=z*x;
+        return z;
+    }
+}
+
+def main(){
+    input global_x;
+    var fuck=jiecheng();
+    output fuck;
+}

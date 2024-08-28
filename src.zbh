@@ -1,0 +1,15 @@
+def f(){
+    var x=10;
+    var z=11;
+    var y=&x;
+    output y;
+    *(y+1)=z+1;
+    output x;
+    output z;
+    return;
+}
+
+def main(){
+    f();
+    return;
+}

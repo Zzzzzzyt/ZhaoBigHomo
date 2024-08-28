@@ -1,0 +1,62 @@
+JMP       None
+label     f
+comment   start of block:[('SVAR', 'x'), ('SASSIGN', 'x', ('lit', 10)), ('SVAR', 'z'), ('SASSIGN', 'z', ('lit', 11)), ('SVAR', 'y'), ('SASSIGN', 'y', ('_&', ('var', 'x'))), ('SOUTPUT', ('var', 'y')), ('SASSIGNP', ('+', ('var', 'y'), ('lit', 1)), ('+', ('var', 'z'), ('lit', 1))), ('SOUTPUT', ('var', 'x')), ('SOUTPUT', ('var', 'z')), ('SRETURN', None)]
+comment   ('SVAR', 'x')
+comment   ('SASSIGN', 'x', ('lit', 10))
+STR       21, 1, 200
+comment   ('SVAR', 'z')
+comment   ('SASSIGN', 'z', ('lit', 11))
+STR       22, 2, 200
+comment   ('SVAR', 'y')
+comment   ('SASSIGN', 'y', ('_&', ('var', 'x')))
+ADD       200, 23, 2
+STR       2, 4, 200
+LDR       4, 200, 2
+STR       2, 3, 200
+comment   ('SOUTPUT', ('var', 'y'))
+LDR       3, 200, 2
+OUT       2
+comment   ('SASSIGNP', ('+', ('var', 'y'), ('lit', 1)), ('+', ('var', 'z'), ('lit', 1)))
+LDR       3, 200, 2
+STR       2, 4, 200
+STR       23, 5, 200
+LDR       4, 200, 2
+LDR       5, 200, 3
+ADD       2, 3, 2
+STR       2, 4, 200
+LDR       2, 200, 2
+STR       2, 5, 200
+STR       23, 6, 200
+LDR       5, 200, 2
+LDR       6, 200, 3
+ADD       2, 3, 2
+STR       2, 5, 200
+LDR       4, 200, 2
+LDR       5, 200, 3
+STR       3, 0, 2
+comment   ('SOUTPUT', ('var', 'x'))
+LDR       1, 200, 2
+OUT       2
+comment   ('SOUTPUT', ('var', 'z'))
+LDR       2, 200, 2
+OUT       2
+comment   ('SRETURN', None)
+LDR       0, 200, 2
+JPI       2
+comment   end of block
+label     main
+comment   start of block:[('SEXP', ('call', 'f', [])), ('SRETURN', None)]
+comment   ('SEXP', ('call', 'f', []))
+ADD       200, 23, 200
+str l     #label_2, 0, 200
+jmp l     f
+label     #label_2
+SUB       200, 23, 200
+STR       100, 1, 200
+comment   ('SRETURN', None)
+LDR       0, 200, 2
+JPI       2
+comment   end of block
+STI       201, 200
+STI       201, None
+jmp l     main
