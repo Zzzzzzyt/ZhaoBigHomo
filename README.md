@@ -2,4 +2,4 @@
 
 Produces smaller output size than XGN's implementation (maybe)
 
-See: [XiaoGeNintendo/ZhaoBigHomo](https://github.com/XiaoGeNintendo/ZhaoBigHomo)
+See: [XiaoGeNekidora/ZhaoBigHomo](https://github.com/XiaoGeNekidora/ZhaoBigHomo)
